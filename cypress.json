@@ -1,0 +1,5 @@
+{
+    "testFiles": "**/*.feature",
+    "baseUrl":"https://academy-crud-frontend.herokuapp.com",
+    "include": ["./node_modules/cypress", "cypress/**/*.js"]
+}
