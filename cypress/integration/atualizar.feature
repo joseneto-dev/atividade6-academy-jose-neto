@@ -14,8 +14,9 @@ Feature: Atualizar um usuario
          | nome | jose1             |
          |email | jose@raro.com.br  |
         And visualizo uma mensagem de Informações atualizadas com sucesso!
+@focus         
     Scenario: Atualizar um usuario com email invalido
-         When busco pelo usuario que desejo atulizar 
+        When busco pelo usuario que desejo atulizar 
         And clico no botao ver detalhes
         Then clico no botao editar 
         And digito as informações de usuario e email para atualizar.

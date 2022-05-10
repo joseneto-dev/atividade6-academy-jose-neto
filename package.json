@@ -7,6 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "cy:open": "cypress open"
   },
+  "cypress-cucumber-preprocessor": {
+    "step_definitions": "cypress/support/steps"
+},
   "author": "José Neto",
   "license": "MIT",
   "devDependencies": {
@@ -14,4 +17,5 @@
     "cypress": "^9.6.0",
     "cypress-cucumber-preprocessor": "^4.3.1"
   }
+ 
 }

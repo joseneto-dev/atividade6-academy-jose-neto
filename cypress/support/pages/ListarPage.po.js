@@ -16,4 +16,4 @@ class ListarPage {
 
 }
 
-export var listaPage = new ListaPage();
+export var listaPage = new ListarPage();
