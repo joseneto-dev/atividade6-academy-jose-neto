@@ -1,15 +1,18 @@
+import { deletarusuario } from "../pages/DeletarUsuario.po";
 Given(/^ao acessar a aplicacao$/, () => {
-	return true;
+	deletarusuario.visitar()
 });
 
 When(/^busco pelo usuario que desejo excluir$/, () => {
-	return true;
+	deletarusuario.buscarusuario('teste')
+	deletarusuario.mock()
 });
 
 Then(/^clico no botao excluir um usuario$/, () => {
-	return true;
+	
+	deletarusuario.deletarusuario()
 });
 
 Then(/^confirmo que desejo excluir o usuario$/, () => {
-	return true;
+	deletarusuario.confirmardelete()
 });

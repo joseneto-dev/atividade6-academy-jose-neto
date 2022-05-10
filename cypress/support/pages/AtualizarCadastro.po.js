@@ -19,9 +19,20 @@ class AtualizarCadastro{
     visitar(){
         cy.visit('https://academy-crud-frontend.herokuapp.com')
     }
-
+    mock(){
+        cy.intercept('GET','https://crud-api-academy.herokuapp.com/api/v1/search?value=teste',{
+         statusCode: 200,
+         body:[
+            {
+                "name": "teste",
+                "email": "t@g.com",
+                "createdAt": "2022-05-10T03:01:22.466Z",
+                "updatedAt": "2022-05-10T03:01:22.466Z"
+            }
+        ]
+      })
+    }
     atualizarusuario(){
-        cy.get(this.buttoneditar).click()
         cy.get(this.inputnome).clear()
         cy.get(this.inputnome).type(randomName)
         cy.get(this.inputemail).clear()
@@ -39,7 +50,7 @@ class AtualizarCadastro{
     botaoverdetalhe(){
         cy.get(this.verdetalhe).click()
     }
-    buttoneditar(){
+    button(){
         cy.get(this.buttoneditar).click()
     }
     atualizarusuario(){

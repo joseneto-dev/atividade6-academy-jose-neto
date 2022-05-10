@@ -4,16 +4,26 @@ class ListarPage {
     visitar() {
         cy.visit("https://academy-crud-frontend.herokuapp.com/users");
     }
-
-    verificarUsuario(nome) {
+   verificarUsuario(nome) {
         cy.contains(this.nomeUsuario, nome);
     }
-    verificarUsuarioinexistente(nome) {   //terminar
-        cy.get('.sc-gKXOVf').type('José')
+    verificarUsuarioinexistente(nome) {   
+        cy.get('.sc-gKXOVf').type(nome)
         cy.get('h3').should('have.text','Ops! Não existe nenhum usuário para ser exibido.')
-        cy.get('.sc-ezWOiH').should('have.attr', 'href')
     }
-
+    mock(){
+        cy.intercept('GET','https://crud-api-academy.herokuapp.com/api/v1/users',{
+         statusCode: 200,
+         body:[
+            {
+                "id": "8c9b33e4-142d-412a-a437-1a9e8bff6b6a",
+                "name": "teste",
+                "email": "t@g.com",
+                "createdAt": "2022-05-10T03:01:22.466Z",
+                "updatedAt": "2022-05-10T03:01:22.466Z"
+            }
+        ]
+      })
+    }
 }
-
 export var listaPage = new ListarPage();
